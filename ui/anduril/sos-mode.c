@@ -29,7 +29,7 @@ uint8_t sos_state(Event event, uint16_t arg) {
 #endif
 
 void sos_blink(uint8_t num, uint8_t dah) {
-    #define DIT_LENGTH 200
+    #define DIT_LENGTH 150
     for (; num > 0; num--) {
         set_level(memorized_level);
         nice_delay_ms(DIT_LENGTH);
@@ -51,6 +51,5 @@ inline void sos_mode_iter() {
     sos_blink(3, 0);  // S
     sos_blink(3, 1);  // O
     sos_blink(3, 0);  // S
-    nice_delay_ms(2000);
+    nice_delay_ms(DIT_LENGTH*7);
 }
-
